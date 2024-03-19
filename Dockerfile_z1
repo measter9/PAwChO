@@ -1,0 +1,8 @@
+FROM ubuntu
+LABEL org.opencontainers.image.authors="Skubij s97737@pollub.edu.pl"
+RUN apt update && apt install apache2 -y
+COPY config /etc/apache2/ports.conf
+COPY index.html /var/www/html/index.html
+EXPOSE 8080
+RUN apache2ctl restart
+CMD [ "apache2ctl","-D","FOREGROUND" ]

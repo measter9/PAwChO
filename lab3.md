@@ -35,10 +35,13 @@ Uruchomienie kontenera rejestru:
 ``docker run -d   --restart=always   --name registry_CA   -v `pwd`/auth:/auth   -v `pwd`/certs:/certs   -v `pwd`/certs:/certs   -e REGISTRY_AUTH=htpasswd   -e REGISTRY_AUTH_HTPASSWD_REALM="Registry Realm"   -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd   -e REGISTRY_HTTP_ADDR=0.0.0.0:443   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt   -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key   -p 443:443   registry:2.7.0``
 
 Wgrywanie obrazu na serwer:
+
 ``docker push localhost:443/ubuntu``
+
 ![docker_push](https://i.imgur.com/d504ZhB.png)
 
 Logowanie
+
 ![logowanie](https://i.imgur.com/LV8A2iS.png)
 
 ![push_success](https://i.imgur.com/fCCXhQK.png)
